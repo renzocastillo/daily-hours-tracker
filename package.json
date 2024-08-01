@@ -1,0 +1,67 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "daily-hours-tracker",
+  "title": "Daily Hours Tracker",
+  "description": "An extension to log daily work hours and calculate monthly totals.",
+  "icon": "command-icon.png",
+  "author": "renzocastillo",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "configure-schedule",
+      "title": "Configure Work Schedule",
+      "description": "Set your default work hours",
+      "mode": "view",
+      "view": {
+        "type": "react",
+        "path": "src/commands/configure-schedule.tsx"
+      }
+    },
+    {
+      "name": "adjust-hours",
+      "title": "Adjust Work Hours",
+      "description": "Add or subtract hours for specific days",
+      "mode": "view",
+      "view": {
+        "type": "react",
+        "path": "src/commands/adjust-hours.tsx"
+      }
+    },
+    {
+      "name": "view-hours",
+      "title": "View Worked Hours",
+      "description": "View your current and estimated monthly worked hours",
+      "mode": "view",
+      "view": {
+        "type": "react",
+        "path": "src/commands/view-hours.tsx"
+      }
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.77.3",
+    "date-fns": "^3.6.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.45"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.8",
+    "@types/date-fns": "^2.6.0",
+    "@types/node": "20.8.10",
+    "@types/react": "18.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"Please run publish command to publish this extension.\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
